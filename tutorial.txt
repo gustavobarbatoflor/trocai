@@ -1,0 +1,47 @@
+:: Tutorial Setup Troca-i ::
+
+#Instalando dependencias no ambiente de desenvolvimento
+apt-get install -y build-essential libssl-dev libffi-dev python-dev
+apt-get install -y python3-venv
+apt-get install -y python3-pip
+python3 -m venv trocai
+
+#Criando banco  de dados e usuario base
+CREATE USER 'di_admin'@'localhost' IDENTIFIED BY 'di2018';
+CREATE DATABASE trocai_db;
+GRANT ALL PRIVILEGES ON trocai_db . * TO 'ti_admin'@'localhost';
+
+#Configurar string no ./instance/config.py
+
+
+#Entrar no ambiente virtual diretorio
+source trocai/bin/activate
+
+
+#Instalar dependencia pip
+pip install wheel
+pip install pymysql
+pip install numpy
+pip install pandas
+pip install virtualenv
+pip install Flask
+pip install flask-sqlalchemy
+pip install flask-login
+pip install flask-migrate
+pip install flask-bootstrap
+pip install Flask-WTF
+
+
+#Exportar as variaveis globais
+export FLASK_CONFIG=development
+export FLASK_APP=run.py
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
+
+#Atualizar banco de dados
+flask db init
+flask db migrate
+flask db upgrade
+
+#executar aplicacao
+flask run

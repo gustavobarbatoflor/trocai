@@ -1,9 +1,9 @@
 <!-- app/templates/base.html -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <title>{{ title }} | Troca-i</title>
+    <title>{{ title }} | TROCA-I</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
@@ -18,7 +18,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand topnav" href="{{ url_for('home.homepage') }}">Project Dream Team</a>
+              <a class="navbar-brand topnav" href="{{ url_for('home.homepage') }}">TROCA-i</a>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
@@ -28,6 +28,9 @@
               </ul>
           </div>
         </div>
+
+
+
     </nav>
     <div class="wrapper">
       {% block body %}
