@@ -11,6 +11,10 @@ CREATE USER 'di_admin'@'localhost' IDENTIFIED BY 'di2018';
 CREATE DATABASE trocai_db;
 GRANT ALL PRIVILEGES ON trocai_db . * TO 'ti_admin'@'localhost';
 
+#Criando banco de teste
+CREATE DATABASE trocai_test;
+GRANT ALL PRIVILEGES ON trocai_test . * TO 'ti_admin'@'localhost';
+
 #Configurar string no ./instance/config.py
 
 
@@ -30,6 +34,8 @@ pip install flask-login
 pip install flask-migrate
 pip install flask-bootstrap
 pip install Flask-WTF
+pip install Flask-Testing
+pip install wtforms_sqlalchemy
 
 
 #Exportar as variaveis globais
